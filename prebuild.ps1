@@ -7,9 +7,9 @@ Set-Location -Path $PSScriptRoot
 # protobuf/3.21.12
 # grpc/1.54.3
 
-$protoc = "C:\Users\admin\.conan2\p\proto8625022988b17\p\bin\protoc.exe" 
-$grpc_cpp_plugin = "C:\Users\admin\.conan2\p\grpc4cef018791af5\p\bin\grpc_cpp_plugin.exe"
-$grpc_python_plugin = "C:\Users\admin\.conan2\p\grpc4cef018791af5\p\bin\grpc_python_plugin.exe"
+$protoc = $PSScriptRoot + "\bin\protoc\protoc.exe"
+$grpc_cpp_plugin = $PSScriptRoot + "\bin\grpc\grpc_cpp_plugin.exe"
+$grpc_python_plugin = $PSScriptRoot + "\bin\grpc\grpc_python_plugin.exe"
 $generatedDir = "generated"
 
 # C++
@@ -32,7 +32,7 @@ if (-Not (Test-Path -Path node)) {
 }
 Push-Location node
 & npm install @grpc/grpc-js @grpc/proto-loader
-& node client.js
+# & node client.js
 Pop-Location
 
 Pop-Location
