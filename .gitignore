@@ -1,0 +1,6 @@
+/build/*
+/generated/*
+/node/node_modules/*
+/node/package-lock.json
+/py/*_pb2*.py
+/CMakeUserPresets.json
